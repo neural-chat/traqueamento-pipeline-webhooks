@@ -1,0 +1,14 @@
+# Runtime
+*.py[cod]
+__pycache__/
+.venv
+.cache
+# Git
+.git
+.gitignore
+# IDEs
+.vscode
+.idea
+# Outros
+*.log
+.env
