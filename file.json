@@ -1,0 +1,43 @@
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "562927296850473",
+      "changes": [
+        {
+          "field": "messages",
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "5521967627094",
+              "phone_number_id": "731946566676450"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgNNTUxMTk4MzkxNjMyMBUCABEYEjRGRjc3ODBDQjVFRjdCNTdCNQA=",
+                "status": "failed",
+                "timestamp": "1772661758",
+                "recipient_id": "5511983916320",
+                "errors": [
+                  {
+                    "code": 130472,
+                    "title": "User's number is part of an experiment",
+                    "message": "User's number is part of an experiment",
+                    "error_data": {
+                      "details": "Failed to send message because this user's phone number is part of an experiment"
+                    },
+                    "href": "https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes/"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "token_cliente": "ojhm6wny7krvrs7lp21dt",
+    "message_timestamp": 1772661759
+  }
+}

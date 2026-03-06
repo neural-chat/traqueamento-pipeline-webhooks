@@ -121,40 +121,36 @@ db.meta_payloads.createIndex(
 
 ---
 
-## 📈 Logs Exemplo
+## � Reagendamento de Leads (Erros Não Críticos)
 
+O sistema agora possui uma lógica de recuperação para leads que falham com erros não críticos da Meta:
+
+1.  **Auditoria**: Toda tentativa é logada na tabela `logs_reagendamentos` (Supabase).
+2.  **Seleção Inteligente**: O sistema busca no Redis (`registro_envio_lead:<wamid>`) e filtra o último template com status `enviado`.
+3.  **Alertas de Exaustão**: Se todas as alternativas de templates já foram tentadas, um alerta é enviado via WhatsApp.
+4.  **Falha de Configuração**: Se o registro não existir no Redis, um alerta informativo com os dados do lead é disparado.
+
+---
+
+## � Logs Exemplo
+
+### Mensagem Padrão
 ```bash
 📦  Novo webhook recebido
 ┌──────────────────────────────┐
 │ object: whatsapp_business... │
-│ id: 9876543210               │
 └──────────────────────────────┘
+```
 
-✅ Doc 66f22b... salvo (expires ~36 h): 02/07 10:45
+### Eventos Especiais (ex: Update de Status de Template)
+```bash
+🔔  Evento: message_template_status_update
+┌──────────────────────────────┐
+│ field: message_template_st...│
+└──────────────────────────────┘
 ```
 
 ---
-
-## 🧠 Casos de Uso
-
-* Armazenar temporariamente eventos da API da Meta
-* Acoplamento com pipelines ETL
-* Histórico curto para debug de integrações
-* Rastreamento de eventos em tempo real
-* Pré-processamento para sistemas de automação
-
----
-
-## 📌 Futuras Melhorias
-
-* Adicionar validação com Pydantic
-* Exportar para data lake (S3, BigQuery etc)
-* Configuração de múltiplas exchanges
-* Web interface para visualização dos eventos
-
----
-
-
 
 ## 🔗 Nome dos Fluxos do N8N
 
@@ -167,4 +163,4 @@ db.meta_payloads.createIndex(
   * Usado para eventos automáticos (`automatic_events`) para rastreamento de leads
 
 
-Nome da Imagem : agencianeuron/traqueamentos-webhooks:0.0.2
+Nome da Imagem : agencianeuron/traqueamentos-webhooks:0.0.3

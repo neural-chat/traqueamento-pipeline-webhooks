@@ -1,0 +1,38 @@
+{
+  "cliente_id":5,
+  "hash_disparo":"a46ff9be-b0c0-4dde-b675-dc11a915951a",
+  "enterprise": 1,
+  "strategy":250,
+  "message_id":"wamid.HBgNNTUyODk5OTc1NTQzOBUCABEYEjZGMzg0NjNFQTE5OTVBMjlBOAA=",
+  "lead_id":12032,
+  "templates":[
+    {
+      "template_identificador":"255245656546548545",
+      "params":{
+        "1":"first_name",
+        "2": "20h"
+      },
+      "midia_url": null,
+      "status": "enviado"
+    },
+    {
+      "template_identificador":"2552094356546548343",
+      "params":{
+        "1":"first_name",
+        "2": "20h"
+      },
+      "midia_url": null,
+      "status": "em_espera"
+    },
+    {
+      "template_identificador":"54520943565465697",
+      "params":{
+        "1":"first_name",
+        "2": "20h"
+      },
+      "midia_url": null,
+      "status": "em_espera"
+    }
+    
+  ]
+}
